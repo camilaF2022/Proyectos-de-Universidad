@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; 
+}
+
+.centrado {
+    text-align: center;
+    background-color: #ffffff; 
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+}
+.boton {
+    background-color: #6a7f96;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;    
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}
+table {
+    border-collapse: collapse; 
+    width: 100%;
+    border: 1px solid #000; 
+}
+
+th, td {
+    border: 1px solid #000; 
+    padding: 8px;
+    text-align: left; 
+}

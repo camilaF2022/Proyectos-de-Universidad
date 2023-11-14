@@ -1,0 +1,28 @@
+{% extends './base.html' %}
+
+{% block title %}Información Hincha{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/informacion.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+<a href="{{ url_for('mostrar_hincha') }}" class="boton">Atrás</a> 
+
+<h1>Detalles del Hincha</h1>
+<p>Nombre: {{ datos_info.nombre }}</p>
+<p>Número de Teléfono: {{ datos_info.numero }}</p>
+<p>Comuna: {{ datos_info.comuna }}</p>
+<p>Deportes:</p>
+<ul>
+    {% for dep in datos_info.deportes %}
+        <li>{{ dep }}</li>
+    {% endfor %}
+</ul>
+<p>Transporte: {{ datos_info.transporte }}</p>
+<p>Email: {{ datos_info.email }}</p>
+<p>Región: {{ datos_info.region }}</p>
+<p>Comentario: {{ datos_info.comentario }}</p> 
+
+{% endblock %}

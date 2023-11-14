@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+
+{% block title %}Estadisticas {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/grafico.css') }}" />
+{% endblock %}
+    
+
+{% block body %}
+<a href="{{ url_for('index') }}" class="boton">Atrás</a>
+<div class="container"> 
+    <h1 class="titulo">Gráficos de Hinchas y Artesanos</h1>
+    <div class="grafico-container">
+        <div id="graficoHinchas" class="grafico" style="width: 600px; height: 600px;"></div>
+        <div id="graficoArtesanos" class="grafico" style="width: 600px; height: 600px;"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+    var urlHinchasGrafico = "{{ url_for('hinchas_grafico') }}";
+    var urlArtesanosGrafico = "{{ url_for('artesanos_grafico') }}";
+</script>
+<script src="{{ url_for('static', filename='js/graficos.js') }}"></script>
+{% endblock %}

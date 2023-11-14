@@ -1,0 +1,93 @@
+{% extends './base.html' %}
+
+{% block title %}Agregar Artesano{% endblock %}
+
+{% block css %}
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/registrar.css') }}"
+/>
+{% endblock %}
+
+
+{% block body %}
+
+<a href="{{ url_for('index') }}" class="boton">Atrás</a> 
+    <div id="error-message" class="error-message" style="display:none;"></div>
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <p>¿Confirma el registro de este artesano?</p>
+            <button id="si-btn">Sí, confirmo</button>
+            <button id="no-btn">No, quiero volver al formulario </button>
+        </div>
+    </div>
+    
+    <div class="centrado">
+    <h1>Registrar Artesano</h1>
+    <form id="formulario" action="{{ url_for('procesar_formulario') }}" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="region">Región:</label>
+            <select id="region" name="region" required>
+                <option value="" selected>Seleccione una región</option>
+                {% for region in regiones %}
+                <option value="{{ region[0] }}"> {{region[1]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div>
+            <label for="comuna">Comuna:</label>
+            <select id="comuna" name="comuna" required>
+                <option value="" selected>Seleccione una comuna</option>
+
+            </select>
+        </div>
+
+        <div>
+            <label for="tipo_artesania"> Tipo de artesanía (Minimo 1, máximo 3):</label>
+            <ul class="list">
+                {% for tipo in tipo_artesania %}
+                    <li><input type="checkbox" name="artesania[]" value="{{ tipo[0] }}"> {{ tipo[1] }} </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            <label for="descripcion"> Descripción de Artesanías: </label>
+            <textarea id="descripcion" name="descripcion" rows="4" cols="50"> </textarea>
+        </div>
+
+        <div>
+            <label for="files">Fotos Artesanías:</label>
+            <input type="file" name="files" id="files" multiple accept="image/jpeg, image/png, image/gif" required>
+            
+        </div>
+
+        <div>
+            <label for="nombre">Nombre artesano(a):</label>
+            <input type="text" name="nombre" id="nombre" minlength="3" maxlength="80" required>
+        </div>
+
+        <div id="mail-input" class="grupo-input">
+            <label for="email">Email contacto artesano(a):</label>
+            <input id="email" name="email" type="email" maxlength="30" required>
+        </div>
+
+        <div>
+            <label for="numero">Número celular contacto:</label>
+            <input type="tel" name="numero" id="numero"  maxlength="15" >
+        </div>
+   
+
+        <button id="submit-btn" type="submit">Registrar Artesano</button>
+    </form>
+    </div>
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static', filename='js/registrar-artesano.js') }}"></script>
+{% endblock %}
+
+
+
+
+

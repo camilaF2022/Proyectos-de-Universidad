@@ -1,0 +1,14 @@
+{% extends "movimientos/base.html" %}
+{% block content %}
+    <h1 class="display-4" style="text-align: center;">Hola {{ user.username }}! 👋</h1>
+    {% include "movimientos/saldo_component.html" %}
+    {% include "movimientos/grafico_component.html" %}
+    <h5>Últimos movimientos:</h5>
+    {% include "movimientos/table_component.html" %}
+    <div class="text-center">
+        <div class="btn-group justify-content-center" role="group" aria-label="Basic example">
+            <a href="{% url 'movimientos-crear' %}" class="btn btn-outline-primary">Ingresar nuevo movimiento</a>
+            <a href="{% url 'movimientos-filtro' %}" class="btn btn-outline-primary">Filtrar movimiento</a>
+        </div>
+    </div>
+{% endblock content %}

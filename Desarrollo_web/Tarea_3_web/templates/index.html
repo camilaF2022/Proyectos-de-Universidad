@@ -1,0 +1,39 @@
+{% extends './base.html' %}
+
+{% block title %}Juegos Panamericanos {% endblock %}
+
+{% block css %}
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/index.css') }}"
+/>
+{% endblock %}
+
+{% block body %}
+    <h1>Juegos Panamericanos</h1>
+    <a href="{{ url_for('graficos') }}" class="boton"> Estadisticas </a> 
+    <table>
+        <tr> 
+            <td>
+                <a href="{{ url_for('registrar_hincha') }}" class="boton">Registrar Hincha</a> 
+            <td>
+                <a href="{{ url_for('registrar_artesano') }}" class="boton">Registrar Artesano</a>
+            </td>
+        </tr>
+        <tr> 
+            <td>
+                <a href="{{ url_for('mostrar_hincha') }}" class="boton">Ver Hincha</a>
+            </td>
+
+            <td>
+                <a href="{{ url_for('mostrar_datos') }}" class="boton">Ver Artesano</a>
+             </td>
+        </tr>
+    </table>
+{% endblock %}
+
+
+
+
+
+

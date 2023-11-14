@@ -1,0 +1,27 @@
+{% extends "login/index.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}   
+
+<!--Login--> 
+<div class="container py-5">
+  <h1 class="text-center">Login</h1>
+  <div class="mx-auto w-50">
+    <form method='POST'>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Recordar cuenta</label>
+      </div>
+      <p class="text-center"><a href="/login/register">Crear cuenta nueva</a></p>
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+

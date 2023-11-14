@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; 
+    font-size: 30px;
+}
+
+
+#detalles-container {
+    padding: 50px;
+    border: 2px solid #ccc; 
+    background-color: white; 
+    max-width: 80%;
+    font-size: 25px;
+}
+.boton {
+    background-color: #6a7f96;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;    
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}

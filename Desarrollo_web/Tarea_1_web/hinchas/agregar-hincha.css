@@ -1,0 +1,63 @@
+.list {
+    max-height: 200px;
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    padding: 5px;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; 
+}
+
+.centrado {
+    width: 700px; 
+    height: 500px;
+    background-color: #d5e3eb; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+}
+
+.boton {
+    background-color: #6a7f96;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;    
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    text-align: center; 
+}
+
+
+.modal-content {
+    background-color: rgb(211, 185, 185); 
+    border-radius: 30px;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 30px;
+}
+
+#si-btn, #no-btn {
+    margin: 30px;
+    padding: 10px 20px;
+    border-radius: 20px; 
+}
+ 

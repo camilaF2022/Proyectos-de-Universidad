@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Artesano</title>
+    <link rel="stylesheet" type="text/css" href="agregar-artesanos.css">
+</head>
+<body>
+    <a href="../index.html" class="boton">Atrás</a>
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <p>¿Confirma el registro de este artesano?</p>
+            <button id="si-btn">Sí, confirmo</button>
+            <button id="no-btn">No, quiero volver al formulario </button>
+        </div>
+    </div>
+    
+    <div class="centrado">
+    <h1>Registrar Artesano</h1>
+    <form name="myform" method="post" enctype="multipart/form-data">
+
+        <div>
+            <label for="region">Región:</label>
+            <select id="region" name="region" required>
+                <option value="" selected>Seleccione una región</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="comuna">Comuna:</label>
+            <select id="comuna" name="comuna" required>
+                <option value="" selected>Seleccione una comuna</option>
+            </select>
+        </div>
+
+        <div>
+            <label> Tipo de artesanía (Minimo 1, máximo 3):</label>
+            <ul class="list">
+                <li><input type="checkbox" name="artesania[]" value="marmol"> Mármol </li>
+                <li><input type="checkbox" name="artesania[]" value="madera"> Madera </li>
+                <li><input type="checkbox" name="artesania[]" value="ceramica"> Cerámica </li>
+                <li><input type="checkbox" name="artesania[]" value="mimbre"> Mimbre </li>
+                <li><input type="checkbox" name="artesania[]" value="metal"> Metal </li>
+                <li><input type="checkbox" name="artesania[]" value="cuero"> Cuero </li>
+                <li><input type="checkbox" name="artesania[]" value="telas"> Telas </li>
+                <li><input type="checkbox" name="artesania[]" value="joyas"> Joyas </li>
+                <li><input type="checkbox" name="artesania[]" value="otro_tipo"> Otro tipo </li>
+            </ul>
+        </div>
+
+        <div>
+            <label for="descripcion"> Descripción de Artesanías: </label>
+            <textarea id="descripcion" name="descripcion" rows="4" cols="50"> </textarea>
+        </div>
+
+        <div>
+            <label for="files">Fotos Artesanías:</label>
+            <input type="file" name="files" id="files" multiple accept="image/jpeg, image/png, image/gif" required><br>
+            <img id="image-preview" src="#" alt="Vista previa de la imagen" style="max-width: 300px; max-height: 300px; display: none;">
+        </div>
+
+        <div>
+            <label for="nombre">Nombre artesano(a):</label>
+            <input type="text" name="nombre" id="nombre" minlength="3" maxlength="80" required>
+        </div>
+
+        <div id="mail-input" class="grupo-input">
+            <label for="email">Email contacto artesano(a):</label>
+            <input id="email" name="email" type="email" maxlength="30" required>
+        </div>
+
+        <div>
+            <label for="numero">Número celular contacto:</label>
+            <input type="tel" name="numero" id="numero"  maxlength="15" >
+        </div>
+   
+
+        <button id="submit-btn" type="button">Registrar Artesano</button>
+    </form>
+    </div>
+     <script type="module" src="./agregar-artesano.js"></script>
+</body>
+</html>
+
+
+   
+

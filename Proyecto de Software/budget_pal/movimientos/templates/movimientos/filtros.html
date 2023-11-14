@@ -1,0 +1,10 @@
+{% extends "movimientos/base.html" %}
+{% block content %}
+    <h1 class="display-4" style="text-align: center;">Hola {{ user.username }}! 👋</h1>
+    {% include "movimientos/filtro_component.html" %}
+    <h5>Movimientos filtrados:</h5>
+    {% include "movimientos/table_component.html" %}
+    <div class="text-center">
+        <a href="{% url 'movimientos-home' %}" class="btn btn-outline-primary">Inicio</a>
+    </div>
+{% endblock content %}
